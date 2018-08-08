@@ -95,44 +95,28 @@
         'form' => $form->createView()
       ));
     }
-    
+
     /**
      * @Route("/article/{id}", name="article_show")
      */
     public function show($id) {
       $article = $this->getDoctrine()->getRepository(Article::class)->find($id);
+
       return $this->render('articles/show.html.twig', array('article' => $article));
     }
-    
+
     /**
      * @Route("/article/delete/{id}")
      * @Method({"DELETE"})
      */
     public function delete(Request $request, $id) {
       $article = $this->getDoctrine()->getRepository(Article::class)->find($id);
-      
+
       $entityManager = $this->getDoctrine()->getManager();
       $entityManager->remove($article);
       $entityManager->flush();
-      
+
       $response = new Response();
       $response->send();
     }
-    
-    // /**
-    //  * @Route("/article/save")
-    //  */
-    // public function save() {
-    //   $entityManager = $this->getDoctrine()->getManager();
-    
-    //   $article = new Article();
-    //   $article->setTitle('Article Two');
-    //   $article->setBody('This is the body for article two');
-    
-    //   $entityManager->persist($article);
-    
-    //   $entityManager->flush();
-    
-    //   return new Response('Saved an article with the id of  '.$article->getId());
-    // }
   }
