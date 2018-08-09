@@ -7,8 +7,8 @@
     <table id="articles" class="table table-striped">
       <thead>
         <tr>
-          <th>Article Title</th>
-          <th>Actions</th>
+          <th>Įrašo pavadinimas</th>
+          <th>Veiksmai</th>
         </tr>
       </thead>
       <tbody>
@@ -16,16 +16,16 @@
           <tr>
             <td>{{ article.title }}</td>
             <td>
-              <a href="/article/{{ article.id }}" class="btn btn-dark">Show</a>
-              <a href="/article/edit/{{ article.id }}" class="btn btn-light">Edit</a>
-              <a href="#" class="btn btn-danger delete-article" data-id="{{ article.id }}">Delete</a>
+              <a href="/article/{{ article.id }}" class="btn btn-dark">Peržiūrėti</a>
+              <a href="/article/edit/{{ article.id }}" class="btn btn-light">Redaguoti</a>
+              <a href="#" class="btn btn-danger delete-article" data-id="{{ article.id }}">Ištrinti</a>
             </td>
           </tr>
         {% endfor %}
       </tbody>
     </table>
   {% else %}
-    <p>No articles to display</p>
+    <p>Nėra nei vieno įrašo</p>
   {% endif %}
 {% endblock %}
 
