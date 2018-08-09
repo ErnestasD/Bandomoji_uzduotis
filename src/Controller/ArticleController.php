@@ -39,7 +39,7 @@
           'attr' => array('class' => 'form-control')
         ))
         ->add('save', SubmitType::class, array(
-          'label' => 'Create',
+          'label' => 'Sukurti',
           'attr' => array('class' => 'btn btn-primary mt-3')
         ))
         ->getForm();
@@ -76,7 +76,7 @@
           'attr' => array('class' => 'form-control')
         ))
         ->add('save', SubmitType::class, array(
-          'label' => 'Update',
+          'label' => 'Atnaujinti',
           'attr' => array('class' => 'btn btn-primary mt-3')
         ))
         ->getForm();
